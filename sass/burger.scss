@@ -1,0 +1,102 @@
+.burgerMenu {
+    @media screen and (max-width :722px) {
+position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 35px;
+    height: 35px;
+    right: 0;
+    margin-right:50px ;
+    z-index: 100;
+    //position: fixed;
+   
+    
+    }
+
+    .line{
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        margin-bottom: 8px;
+        transition: all 0.7s linear;
+    }
+}
+
+.burgerMenu.open {
+    position: fixed;
+    span {
+        &.l2 {
+            opacity: 0;
+        }
+        // les deux span pivotent et se dépace pour former une croix
+        &.l1 {
+            transform: rotate(45deg) translate(4px, 10px);
+        }
+        &.l3 {
+            transform: rotate(-45deg) translate(4px, -10px);
+        }
+    }
+}
+
+.links{
+   
+    @media screen and (max-width :722px) {
+        display: none;
+        position: fixed;
+        left: 0;
+        width: 100%;
+top :0;
+        background-color:hsl(51, 100%, 49%);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: top 1s ease;
+        bottom: 0;
+        margin: 0 !important;
+        padding-left: 0;
+        padding-top: 100px;
+     
+
+        &.open {
+            display: block;
+            animation: fadeMenu 1.5s forwards;
+        }
+       
+}
+
+}
+.link{
+    @media screen and (max-width :722px) {
+        margin-right: 0 !important;
+        padding-bottom: 40px;
+        margin-left: 0 !important;
+        font-size: 25px !important;
+        padding-left: 0 !important;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 20px;
+     
+    }
+  
+ 
+}
+.buttonContact{
+    @media screen and (max-width :722px) {
+   
+
+}
+}
+
+
+@keyframes fadeMenu {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
